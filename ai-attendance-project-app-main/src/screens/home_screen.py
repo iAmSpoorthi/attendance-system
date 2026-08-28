@@ -2,6 +2,10 @@ import streamlit as st
 from src.components.header import header_home
 from src.components.footer import footer_home
 from src.ui.base_layout import style_base_layout, style_background_home
+from pathlib import Path
+
+ASSETS_DIR = Path(__file__).resolve().parent.parent/"assets"
+
 def home_screen():
 
 
@@ -14,14 +18,14 @@ def home_screen():
 
     with col1:
         st.header("I'm Student")
-        st.image("src/assets/student.png", width=165)
+        st.image(ASSETS_DIR/"student.png", width=165)
         if st.button('Student Portal', type='primary', icon=':material/arrow_outward:', icon_position='right'):
             st.session_state['login_type']='student'
             st.rerun()
 
     with col2:
         st.header("I'm Teacher")
-        st.image("src/assets/teacher.png", width=145)
+        st.image(ASSETS_DIR/"teacher.png", width=145)
         if st.button('Teacher Portal', type='primary', icon=':material/arrow_outward:', icon_position='right'):
             st.session_state['login_type']='teacher'
             st.rerun()

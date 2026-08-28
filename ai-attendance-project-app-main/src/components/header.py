@@ -1,10 +1,11 @@
 import streamlit as st
 import os
+from pathlib import Path
 import base64
 
 
 def header_home():
-    logo_path = os.path.join("src", "assets", "attendiq_logo.png")
+    logo_path = Path(__file__).resolve().parent.parent/"assets"/"attendiq_logo.png"
 
     # Convert logo to base64 so it can be displayed cleanly in HTML
     with open(logo_path, "rb") as f:
@@ -35,8 +36,7 @@ def header_home():
     )
 
 def header_dashboard():
-    logo_path = os.path.join("src", "assets", "attendiq_logo.png")
-
+    logo_path = Path(__file__).resolve().parent.parent/"assets"/"attendiq_logo.png"
     import base64
 
     with open(logo_path, "rb") as f:
