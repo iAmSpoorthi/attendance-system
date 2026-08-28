@@ -1,27 +1,66 @@
 import streamlit as st
+import os
+import base64
 
 
 def header_home():
+    logo_path = os.path.join("src", "assets", "attendiq_logo.png")
 
-    logo_url = "https://i.ibb.co/YTYGn5qV/logo.png"
-    
-    st.markdown(f"""
-        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin-bottom:30px; margin-top:30px">
-            <img src='{logo_url}' style='height:100px;' />
-            <h1 style='text-align:center; color:#E0E3FF'>SNAP<br/>CLASS</h1>
-        </div>   
-                
-                """, unsafe_allow_html=True)
+    # Convert logo to base64 so it can be displayed cleanly in HTML
+    with open(logo_path, "rb") as f:
+        logo_base64 = base64.b64encode(f.read()).decode()
 
+    st.markdown(
+        f"""
+        <div style="
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 35px;
+        ">
+            <img
+                src="data:image/png;base64,{logo_base64}"
+                style="
+                    width: 420px;
+                    max-width: 80%;
+                    height: auto;
+                    display: block;
+                "
+            >
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 def header_dashboard():
+    logo_path = os.path.join("src", "assets", "attendiq_logo.png")
 
-    logo_url = "https://i.ibb.co/YTYGn5qV/logo.png"
-    
-    st.markdown(f"""
-        <div style="display:flex; align-items:center; justify-content:center; gap:10px">
-            <img src='{logo_url}' style='height:85px;' />
-            <h2 style='text-align:left; color:#5865F2'>SNAP<br/>CLASS</h1>
-        </div>   
-                
-                """, unsafe_allow_html=True)
+    import base64
+
+    with open(logo_path, "rb") as f:
+        logo_base64 = base64.b64encode(f.read()).decode()
+
+    st.markdown(
+        f"""
+        <div style="
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        ">
+            <img
+                src="data:image/png;base64,{logo_base64}"
+                style="
+                    width: 300px;
+                    height: auto;
+                    display: block;
+                "
+            >
+        </div>
+        """,
+        unsafe_allow_html=True
+    )

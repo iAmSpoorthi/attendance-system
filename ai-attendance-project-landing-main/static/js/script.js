@@ -1,4 +1,4 @@
-// Enhanced interactions for SnapClass
+// Enhanced interactions for AttendIq
 document.addEventListener('DOMContentLoaded', () => {
     // Scroll Reveal for Feature Cards and Flow Steps
     const observerOptions = {
@@ -34,5 +34,5 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(styleTag);
 
-    console.log('SnapClass Premium Landing Page Active');
+    console.log('AttendIQ Premium Landing Page Active');
 });
