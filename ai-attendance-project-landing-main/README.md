@@ -1,1 +1,0 @@
-# ai-attendance-project-landing
