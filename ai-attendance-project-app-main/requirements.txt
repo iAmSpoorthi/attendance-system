@@ -22,3 +22,5 @@ pillow
 
 librosa
 resemblyzer
+
+opencv-python-headless
